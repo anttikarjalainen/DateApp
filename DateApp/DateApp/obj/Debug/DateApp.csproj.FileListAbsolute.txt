@@ -24,3 +24,29 @@ C:\dev\VS reeniä\DateApp\DateApp\bin\Debug\RestSharp.xml
 C:\dev\VS reeniä\DateApp\DateApp\obj\Debug\DateApp.csproj.CopyComplete
 C:\dev\VS reeniä\DateApp\DateApp\bin\Debug\Newtonsoft.Json.dll
 C:\dev\VS reeniä\DateApp\DateApp\bin\Debug\Newtonsoft.Json.xml
+C:\dev\DateApp\DateApp\DateApp\bin\Debug\DateApp.exe.config
+C:\dev\DateApp\DateApp\DateApp\bin\Debug\DateApp.exe
+C:\dev\DateApp\DateApp\DateApp\bin\Debug\DateApp.pdb
+C:\dev\DateApp\DateApp\DateApp\bin\Debug\Newtonsoft.Json.dll
+C:\dev\DateApp\DateApp\DateApp\bin\Debug\RestSharp.dll
+C:\dev\DateApp\DateApp\DateApp\bin\Debug\Newtonsoft.Json.xml
+C:\dev\DateApp\DateApp\DateApp\bin\Debug\RestSharp.xml
+C:\dev\DateApp\DateApp\DateApp\obj\Debug\DateApp.csprojAssemblyReference.cache
+C:\dev\DateApp\DateApp\DateApp\obj\Debug\AddDate.g.cs
+C:\dev\DateApp\DateApp\DateApp\obj\Debug\DatabaseView.g.cs
+C:\dev\DateApp\DateApp\DateApp\obj\Debug\StartPage.g.cs
+C:\dev\DateApp\DateApp\DateApp\obj\Debug\MainWindow.g.cs
+C:\dev\DateApp\DateApp\DateApp\obj\Debug\App.g.cs
+C:\dev\DateApp\DateApp\DateApp\obj\Debug\DateApp_MarkupCompile.cache
+C:\dev\DateApp\DateApp\DateApp\obj\Debug\DateApp_MarkupCompile.lref
+C:\dev\DateApp\DateApp\DateApp\obj\Debug\AddDate.baml
+C:\dev\DateApp\DateApp\DateApp\obj\Debug\DatabaseView.baml
+C:\dev\DateApp\DateApp\DateApp\obj\Debug\StartPage.baml
+C:\dev\DateApp\DateApp\DateApp\obj\Debug\MainWindow.baml
+C:\dev\DateApp\DateApp\DateApp\obj\Debug\DateApp.g.resources
+C:\dev\DateApp\DateApp\DateApp\obj\Debug\DateApp.Properties.Resources.resources
+C:\dev\DateApp\DateApp\DateApp\obj\Debug\DateApp.csproj.GenerateResource.cache
+C:\dev\DateApp\DateApp\DateApp\obj\Debug\DateApp.csproj.CoreCompileInputs.cache
+C:\dev\DateApp\DateApp\DateApp\obj\Debug\DateApp.csproj.CopyComplete
+C:\dev\DateApp\DateApp\DateApp\obj\Debug\DateApp.exe
+C:\dev\DateApp\DateApp\DateApp\obj\Debug\DateApp.pdb

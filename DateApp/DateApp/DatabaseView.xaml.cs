@@ -48,9 +48,16 @@ namespace DateApp
 
                                 // tähän tulostus käyttöliittymään
                                 Console.WriteLine("data------------{0}", data);
-                                var dataObj = JArray.Parse(data);
-                                dynamic result = JObject.Parse(dataObj[0].ToString());
-                                this.displayName.Text = result.name;
+                                dynamic obj = Newtonsoft.Json.JsonConvert.DeserializeObject(data) as JArray;
+                                foreach(var filtered in obj)
+                                {
+                                    filtered.name = this.displayName.Text;
+                                }
+                                //var dataObj = JArray.Parse(data);
+
+
+                                //dynamic result = JObject.Parse(dataObj[0].ToString());
+                                //this.displayName.Text = result.name;
                             }
                             else
                             {
