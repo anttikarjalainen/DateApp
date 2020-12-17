@@ -1,0 +1,36 @@
+﻿<Page x:Class="DateApp.DatabaseView"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:DateApp"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="DatabaseView">
+
+    <Grid Margin="0,10,10,0">
+        <Border Grid.Column="1" Grid.Row="1" Height="35" Padding="5" Background="#4E87D4">
+            <Label VerticalAlignment="Center" Foreground="White">Päivämäärät tietokannasta</Label>
+        </Border>
+        <ListBox Name="peopleListBox" Grid.Column="1" Grid.Row="2">
+            <ListBoxItem>Päivämäärä 1</ListBoxItem>
+            <ListBoxItem>Päivämäärä 2</ListBoxItem>
+            <ListBoxItem>Päivämäärä 3</ListBoxItem>
+            <ListBoxItem>Päivämäärä 4</ListBoxItem>
+            <Button Click="GetMarks">Hae tiedot</Button>
+            <TextBlock Name="displayName"></TextBlock>
+        </ListBox>
+        <!-- View report button -->
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="230"></ColumnDefinition>
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition></RowDefinition>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition />
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+    </Grid>
+</Page>
