@@ -13,6 +13,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 
 namespace DateApp
@@ -25,54 +26,15 @@ namespace DateApp
         public DatabaseView()
         {
             InitializeComponent();
+            LoadData();
         }
-
-        public  async void GetMarks(object sender, RoutedEventArgs e)
+        public async void LoadData()
         {
-            //määritetään url
             string url = "https://datetestapp.azurewebsites.net/api/HttpGET";
-
-            try
-            {
-                using (HttpClient client = new HttpClient())
-
-                {
-                    using (HttpResponseMessage res = await client.GetAsync(url))
-                    {
-                        using (HttpContent content = res.Content)
-                        {
-                            var data = await content.ReadAsStringAsync();
-
-                            if (data != null)
-                            {
-
-                                // tähän tulostus käyttöliittymään
-                                Console.WriteLine("data------------{0}", data);
-                                dynamic obj = Newtonsoft.Json.JsonConvert.DeserializeObject(data) as JArray;
-                                foreach(var filtered in obj)
-                                {
-                                    filtered.name = this.displayName.Text;
-                                }
-                                //var dataObj = JArray.Parse(data);
-
-
-                                //dynamic result = JObject.Parse(dataObj[0].ToString());
-                                //this.displayName.Text = result.name;
-                            }
-                            else
-                            {
-                                Console.WriteLine("NO Data ------------");
-                            }
-                        } 
-                    }
-
-                }
-            } catch (Exception exception)
-            {
-                // error handlaus tänne
-            }
-
-
+            HttpClient client = new HttpClient();
+            string response = await client.GetStringAsync(url);
+            List<CalendarMark> calendarMark = JsonConvert.DeserializeObject<List<CalendarMark>>(response);
+            ListDataBinding.ItemsSource = calendarMark;
         }
     }
     public class CalendarMark

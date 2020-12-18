@@ -8,29 +8,20 @@
       d:DesignHeight="450" d:DesignWidth="800"
       Title="DatabaseView">
 
-    <Grid Margin="0,10,10,0">
-        <Border Grid.Column="1" Grid.Row="1" Height="35" Padding="5" Background="#4E87D4">
-            <Label VerticalAlignment="Center" Foreground="White">Päivämäärät tietokannasta</Label>
-        </Border>
-        <ListBox Name="peopleListBox" Grid.Column="1" Grid.Row="2">
-            <ListBoxItem>Päivämäärä 1</ListBoxItem>
-            <ListBoxItem>Päivämäärä 2</ListBoxItem>
-            <ListBoxItem>Päivämäärä 3</ListBoxItem>
-            <ListBoxItem>Päivämäärä 4</ListBoxItem>
-            <Button Click="GetMarks">Hae tiedot</Button>
-            <TextBlock Name="displayName"></TextBlock>
-        </ListBox>
-        <!-- View report button -->
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="230"></ColumnDefinition>
-            <ColumnDefinition />
-        </Grid.ColumnDefinitions>
-        <Grid.RowDefinitions>
-            <RowDefinition></RowDefinition>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition />
-            <RowDefinition Height="Auto"/>
-        </Grid.RowDefinitions>
-
+    <Grid>
+        <ListView Margin="10" Name="ListDataBinding">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Name" Width="120" DisplayMemberBinding="{Binding Name}" />
+                    <GridViewColumn Header="Pvm" Width="50" DisplayMemberBinding="{Binding Duedate}" />
+                    <GridViewColumn Header="Id" Width="150">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate></DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+                </GridView>
+            </ListView.View>
+        </ListView>
     </Grid>
+
 </Page>
