@@ -32,12 +32,12 @@ namespace DateApp
             string usertext = UserText.Text;
             string userdate = UserDate.Text;
             var client = new HttpClient();
+            var testDate = UserDate.Value;
+            MessageBox.Show(testDate.ToString());
             var secondUrl = usertext + "&duedate=" + userdate;
-
             // simppeli Get-requesti Azure-functioon joka pyörii azuressa
             var request = new HttpRequestMessage(HttpMethod.Get, apiURL + secondUrl);
             HttpResponseMessage response = await client.SendAsync(request);
-
             // printataan teksti
             this.displayText.Text = "Onnistui!";
         }

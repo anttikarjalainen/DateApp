@@ -8,11 +8,13 @@
       d:DesignHeight="450" d:DesignWidth="800"
       Title="AddDate">
     <StackPanel Margin="20">
-        <Label>Tekstikenttä:</Label>
-        <TextBox Name="UserText" />
-        <Label>Päivämäärä:</Label>
-        <xctk:DateTimePicker Name="UserDate"></xctk:DateTimePicker>
-        <Button Margin="20" Click="SendToDatabase">Tallenna kantaan</Button>
+        <Label Width="350">Tekstikenttä:</Label>
+        <TextBox Width="350" Name="UserText" />
+        <Label Width="350">Päivämäärä:</Label>
+        <xctk:DateTimePicker Width="350" Format="Custom"  FormatString="MM/dd/yyyy HH:mm"
+                TimeFormat="Custom"
+                TimeFormatString="hh:mm:ss tt" Name="UserDate" Value="{Binding Path=testDate, Mode=OneWay}"></xctk:DateTimePicker>
+        <Button Width="350" Margin="20" Click="SendToDatabase">Tallenna kantaan</Button>
         <TextBlock Margin="318,10,361,10" FontSize="20" Name="displayText" RenderTransformOrigin="0.853,0.667"></TextBlock>
     </StackPanel>
 </Page>

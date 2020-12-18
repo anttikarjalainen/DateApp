@@ -3,17 +3,25 @@
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-      xmlns:local="clr-namespace:DateApp"
+      xmlns:local="clr-namespace:DateApp" xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
       Title="DatabaseView">
 
     <Grid>
-        <ListView Margin="10" Name="ListDataBinding">
+        <StackPanel Margin="50">
+            <Label>Valitse päivämääräväli, miltä ajalta haetaan tietoja kannasta</Label>
+        <xctk:DateTimePicker Width="350" Value="{Binding Path=fromDate, Mode=TwoWay}" Name="FirstDate"></xctk:DateTimePicker>
+        <xctk:DateTimePicker Width="350" Name="SecondDate"></xctk:DateTimePicker>
+            <Button Width="350" Click="LoadData">Hae tiedot</Button>
+        </StackPanel>
+
+        <Grid>
+        <ListView Margin="365,219,46,49" Name="ListDataBinding">
             <ListView.View>
                 <GridView>
                     <GridViewColumn Header="Name" Width="120" DisplayMemberBinding="{Binding Name}" />
-                    <GridViewColumn Header="Pvm" Width="50" DisplayMemberBinding="{Binding Duedate}" />
+                    <GridViewColumn Header="Pvm" Width="250" DisplayMemberBinding="{Binding Duedate}" />
                     <GridViewColumn Header="Id" Width="150">
                         <GridViewColumn.CellTemplate>
                             <DataTemplate></DataTemplate>
@@ -22,6 +30,7 @@
                 </GridView>
             </ListView.View>
         </ListView>
+    </Grid>
     </Grid>
 
 </Page>

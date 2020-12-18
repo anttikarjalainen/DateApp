@@ -26,15 +26,40 @@ namespace DateApp
         public DatabaseView()
         {
             InitializeComponent();
-            LoadData();
         }
-        public async void LoadData()
+        public async void LoadData(object sender, RoutedEventArgs e)
         {
             string url = "https://datetestapp.azurewebsites.net/api/HttpGET";
             HttpClient client = new HttpClient();
             string response = await client.GetStringAsync(url);
+            // tässä päivämäärä jo väärässä muodossa?
             List<CalendarMark> calendarMark = JsonConvert.DeserializeObject<List<CalendarMark>>(response);
-            ListDataBinding.ItemsSource = calendarMark;
+            // halutaan muuttaa date stringit datetimeksi ja tulostaa vain tietyltä aikaväliltä(Pvm 1 ja Pvm 2)
+            // jostain syystä vaikka Azure cosmos DB:SSÄ päivämäärät muotoa "yyyy-MM-ddTHH:mm:ss.fffffffZ" httpGet-kutsun jälkeen ovat muotoa  "DD-MM-YYYY HH:MM:SS"     
+
+            // testataan kovakoodatuilla arvoilla
+            List<CalendarMark> calendarList = new List<CalendarMark>();
+            calendarList.Add(new CalendarMark("1", "Antti", "2022-12-18T20:15:00.0000000Z"));
+            calendarList.Add(new CalendarMark("2", "Pekka", "2022-12-18T10:30:00.0000000Z"));
+            calendarList.Add(new CalendarMark("3", "Juuso", "2022-12-18T19:56:00.0000000Z"));
+
+            foreach (var i in calendarList )
+            {
+                DateTime toDate = DateTime.Now;
+                DateTime oDate = DateTime.Parse(i.Duedate);             
+                if(toDate <= oDate)
+                {
+                    MessageBox.Show("Läp tuli!" + i.Duedate);
+                    List<CalendarMark> filteredList = new List<CalendarMark>();
+                    filteredList.Add(new CalendarMark(i.Id, i.Name, i.Duedate));
+                    ListDataBinding.ItemsSource = filteredList;
+                }
+                else
+                {
+                    MessageBox.Show("EI löytynyt mitään! Yritä uusilla päivämäärillä!");
+                }
+            }
+            //ListDataBinding.ItemsSource = calendarMark;
         }
     }
     public class CalendarMark
