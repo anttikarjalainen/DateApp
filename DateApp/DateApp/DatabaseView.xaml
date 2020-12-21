@@ -11,8 +11,8 @@
     <Grid>
         <StackPanel Margin="50">
             <Label>Valitse päivämääräväli, miltä ajalta haetaan tietoja kannasta</Label>
-        <xctk:DateTimePicker Width="350" Value="{Binding Path=fromDate, Mode=TwoWay}" Name="FirstDate"></xctk:DateTimePicker>
-        <xctk:DateTimePicker Width="350" Name="SecondDate"></xctk:DateTimePicker>
+        <xctk:DateTimePicker Format="Custom" FormatString="yyyy-MM-dd" Width="350" Value="{Binding Path=fromDate, Mode=TwoWay}" Name="FirstDate"></xctk:DateTimePicker>
+            <xctk:DateTimePicker Format="Custom" FormatString="yyyy-MM-dd" Width="350" Name="SecondDate"></xctk:DateTimePicker>
             <Button Width="350" Click="LoadData">Hae tiedot</Button>
         </StackPanel>
 

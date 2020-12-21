@@ -1,0 +1,25 @@
+#r "Newtonsoft.Json"
+
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Http;
+using Microsoft.Extensions.Logging;
+
+public static IActionResult Run(HttpRequest req, out object outputDocument, ILogger log)
+{
+    string name = req.Query["name"];
+    string duedate = req.Query["duedate"];
+    if (!string.IsNullOrEmpty(name))
+    {
+        outputDocument = new
+        {
+            name,
+            duedate
+        };
+        return (ActionResult)new OkResult();
+    }
+    else
+    {
+        outputDocument = null;
+        return (ActionResult)new BadRequestResult();
+    }
+}

@@ -11,7 +11,7 @@
         <Label Width="350">Tekstikenttä:</Label>
         <TextBox Width="350" Name="UserText" />
         <Label Width="350">Päivämäärä:</Label>
-        <xctk:DateTimePicker Width="350" Format="Custom"  FormatString="MM/dd/yyyy HH:mm"
+        <xctk:DateTimePicker Width="350" Format="Custom"  FormatString="yyyy-MM-dd "
                 TimeFormat="Custom"
                 TimeFormatString="hh:mm:ss tt" Name="UserDate" Value="{Binding Path=testDate, Mode=OneWay}"></xctk:DateTimePicker>
         <Button Width="350" Margin="20" Click="SendToDatabase">Tallenna kantaan</Button>
