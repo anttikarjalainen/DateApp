@@ -19,7 +19,6 @@ namespace DateApp
     /// Interaction logic for AddDate.xaml
     /// </summary>
     /// 
-
     public partial class AddDate : Page
     {
         public AddDate()

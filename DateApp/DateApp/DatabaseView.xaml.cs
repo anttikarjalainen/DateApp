@@ -34,7 +34,6 @@ namespace DateApp
             string url = "http://localhost:7071/api/Function1?" + "pvm1=" + i + "&pvm2=" + i2;
             HttpClient client = new HttpClient();
             string response = await client.GetStringAsync(url);
-            // tässä päivämäärä jo väärässä muodossa?
             List<CalendarMark> calendarMark = JsonConvert.DeserializeObject<List<CalendarMark>>(response);
             ListDataBinding.ItemsSource = calendarMark;
         }
